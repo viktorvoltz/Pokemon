@@ -10,10 +10,10 @@ class Success{
 
 class Failure{
   int? code;
-  String? message;
+  String? response;
 
   Failure({
     this.code,
-    this.message,
+    this.response,
   });
 }

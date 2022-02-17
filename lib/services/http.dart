@@ -7,21 +7,21 @@ import 'dart:convert';
 import 'package:pokemon/utils/api.dart';
 
 class GetPokemonData {
-  Future<Object> getData() async {
+  static Future<Object> getData() async {
     try {
       final response = await http.get(
         Uri.parse(API_KEY),
       );
       if (response.statusCode == 200) {
-        return pokenModelFromJson(response.body);
+        return Success(response: pokenModelFromJson(response.body));
       }
-      return Failure(code: 100, message: 'Invalid Response');
+      return Failure(code: 100, response: 'Invalid Response');
     } on HttpException {
-      return Failure(code: 101, message: 'No Internet');
+      return Failure(code: 101, response: 'No Internet');
     } on FormatException {
-      return Failure(code: 102, message: 'Invalid Format');
+      return Failure(code: 102, response: 'Invalid Format');
     } catch (e) {
-      return Failure(code: 103, message: 'Invalid Response');
+      return Failure(code: 103, response: 'Invalid Response');
     }
   }
 }
