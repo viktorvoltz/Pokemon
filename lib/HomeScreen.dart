@@ -11,24 +11,50 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   @override
   void initState() {
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     PokemonProvider? pokemonProvider = Provider.of<PokemonProvider>(context);
     return Scaffold(
-        body: Container(
-      child: Center(child: screen(pokemonProvider)),
+        body: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Center(
+          child: screen(pokemonProvider),
+        ),
+      ],
     ));
   }
 
   Widget screen(PokemonProvider pokemonProvider) {
     if (pokemonProvider.loading) {
-      return Text('Loading, wait!');
+      return const Text('Loading, wait!');
     }
-    return Text(pokemonProvider.pokemonData!.abilities![0].ability!.url.toString());
+    return Column(
+      children: [
+        Text(
+          "Ability URL" +
+              " " +
+              pokemonProvider.pokemonData!.abilities![0].ability!.url
+                  .toString(),
+        ),
+        Text(
+          "Ability NAME" +
+              " " +
+              pokemonProvider.pokemonData!.abilities![0].ability!.name
+                  .toString(),
+        ),
+        Text(
+          "Ability SLOT" +
+              " " +
+              pokemonProvider.pokemonData!.abilities![0].slot!
+                  .toString(),
+        ),
+      ],
+    );
   }
 }
