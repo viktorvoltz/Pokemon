@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:pokemon/model/PokeModel.dart';
 import 'package:pokemon/services/httpStatus.dart';
 import 'dart:convert';
-import 'package:pokemon/utils/api.dart';
+import 'package:pokemon/utils/constants.dart';
 
 class GetPokemonData {
   static Future<Object> getData() async {

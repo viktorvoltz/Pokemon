@@ -30,6 +30,10 @@ class _HomeScreenState extends State<HomeScreen> {
     if (pokemonProvider.loading) {
       return const Text('Loading, wait!');
     }
+
+    if (pokemonProvider.error != null){
+      return Text(pokemonProvider.error!.response.toString());
+    }
     return Column(
       children: [
         Text(
