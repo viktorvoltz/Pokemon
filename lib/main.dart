@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon/HomeScreen.dart';
+import 'package:pokemon/views/HomeScreen.dart';
 import 'package:pokemon/viewmodels/pokemonProvider.dart';
 import 'package:provider/provider.dart';
 
