@@ -78,6 +78,18 @@ class _HomeScreenState extends State<HomeScreen> {
               pokemonProvider.pokemonData!.name!
                   .toString(),
         ),
+        Text(
+          "SPECIE NAME:" +
+              " " +
+              pokemonProvider.pokemonData!.species!.name
+                  .toString(),
+        ),
+        Text(
+          "SPECIE URL:" +
+              " " +
+              pokemonProvider.pokemonData!.species!.url
+                  .toString(),
+        ),
       ],
     );
   }
