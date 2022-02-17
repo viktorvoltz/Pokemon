@@ -37,21 +37,45 @@ class _HomeScreenState extends State<HomeScreen> {
     return Column(
       children: [
         Text(
-          "Ability URL" +
+          "ABILITY URL:" +
               " " +
               pokemonProvider.pokemonData!.abilities![0].ability!.url
                   .toString(),
         ),
         Text(
-          "Ability NAME" +
+          "ABILITY NAME:" +
               " " +
               pokemonProvider.pokemonData!.abilities![0].ability!.name
                   .toString(),
         ),
         Text(
-          "Ability SLOT" +
+          "Ability SLOT:" +
               " " +
               pokemonProvider.pokemonData!.abilities![0].slot!
+                  .toString(),
+        ),
+        Text(
+          "HEIGHT:" +
+              " " +
+              pokemonProvider.pokemonData!.height!
+                  .toString(),
+        ),
+        Text(
+          "WEIGHT:" +
+              " " +
+              pokemonProvider.pokemonData!.weight!
+                  .toString(),
+        ),
+        Text(
+          "ORDER:" +
+              " " +
+              pokemonProvider.pokemonData!.order!
+                  .toString(),
+        ),
+        Text(
+          "NAME:" +
+              " " +
+              pokemonProvider.pokemonData!.name!
                   .toString(),
         ),
       ],
